@@ -181,7 +181,7 @@ nav {
 .plan-description {
   height: 70rem;
   margin-top: 4rem;
-
+  font-weight: bold;
 }
 
 .plan-description h3 {
