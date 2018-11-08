@@ -18,17 +18,19 @@ document.addEventListener('DOMContentLoaded',function(){
 
 	var moreButton = document.querySelectorAll('.read-more');
 	for( var i=0;i<3;i++){
-		moreButton[i].addEventListener('click',function(){
+		moreButton[i].addEventListener('click',showHide);
+	}
+
+	function showHide(){
 			var textArea = this.previousElementSibling;			
 			if ( textArea.style.display === 'none' || textArea.style.display === '' ){
 				textArea.style.display = 'block';
 				this.innerHTML = 'mniej <span class="glyphicon glyphicon-chevron-up"></span>';
 			} else {
 				textArea.style.display = 'none';
-				this.innerHTML = 'mniej <span class="glyphicon glyphicon-chevron"></span>';
+				this.innerHTML = 'wiecej <span class="glyphicon glyphicon-chevron-down"></span>';
 			}
-		});
-	}
+		}
 });
 
 
