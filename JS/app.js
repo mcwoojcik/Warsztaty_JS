@@ -32,13 +32,13 @@ document.addEventListener('DOMContentLoaded',function(){
 			}
 		}
 	
-	/*window.addEventListener('scroll',function(){
-		      console.log('działa przy scrollu');
+	window.addEventListener('scroll',function(){
+		console.log('działa przy scrollu');
 
 		var changeBottomBorder = document.querySelector('.navbar-brand');
 		changeBottomBorder.style.borderBottom = '3px solid red';	
 	});
-*/
+
 
 	
 /*	var menuBorder = document.querySelector('.navbar-brand');
@@ -71,6 +71,7 @@ document.addEventListener('DOMContentLoaded',function(){
 			items[0].classList.add('visible');
 		});
 
+		
 		dots[1].addEventListener('click',function(){
 			for(var i=0;i<4;i++){
 				if(i!=1){
@@ -105,8 +106,47 @@ document.addEventListener('DOMContentLoaded',function(){
 		});
 	
 
+	//ZADANIE 6 (CHYBA)
+	var input = document.querySelector('.input1');
+	var taskButton = document.querySelector('.button2');
+	var tasksList = document.querySelector('.tasksList');
+	taskButton.addEventListener('click',addTask);
+	
+	function addTask(){
+		if(input.value != ''){
+			var newTask = document.createElement('li');
+			var deleteButton = document.createElement('button');
+			var newTaskContent = document.createElement('div');
+			var doneButton = document.createElement('button');
+
+			newTaskContent.innerHTML=input.value;
+			deleteButton.innerHTML="USUN";
+			doneButton.innerHTML="ZROBIONE";
+			newTask.appendChild(newTaskContent);
+			newTask.appendChild(deleteButton);
+			newTask.appendChild(doneButton);
+			deleteButton.classList.add('deleteButton','btn');
+			doneButton.classList.add('doneButton','btn');
+			input.value=''; // moze byc document.queryselector('.placeholder') <- dziala tak samo
+			
+			tasksList.appendChild(newTask);
+			
+			deleteButton.addEventListener('click',function(){
+				this.parentElement.parentNode.removeChild(this.parentElement);
+
+			});
+
+			doneButton.addEventListener('click',function(){
+				this.parentElement.style.background = 'green';
+
+
+			});
+		}else alert("Weźże coś napisz")
+	}
+
 });
 
+//function
 
 
 

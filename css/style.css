@@ -320,3 +320,34 @@ footer p {
 .visible{
 display: inline-block !important ; 
 }
+
+.newTaskContent{
+  margin:left;
+}
+
+.deleteButton{
+  margin-right: auto;
+  background-color: white;
+  font-size: 12px;
+  padding: 3px;
+  font-weight:bold;
+  width: 200px;
+
+}
+.deleteButton:hover{
+  background-color: lightgray;
+
+}
+
+.doneButton{
+  margin-left: auto;
+  background-color: white;
+  font-size: 12px;
+  padding: 3px;
+  font-weight:bold;
+  width: 200px;
+
+}
+.doneButton:hover{
+  background-color: lightgray;
+}
